@@ -6,7 +6,7 @@ import androidx.room.TypeConverters
 import com.danielpasser.coronavirusinfo.model.Country
 import com.danielpasser.coronavirusinfo.model.CovidData
 
-@Database(entities = [CovidData::class],version = 1)
+@Database(entities = [Country::class,CovidData::class],version = 3)
 @TypeConverters(Converters::class)
 abstract class CoronaVirusDB : RoomDatabase() {
     abstract fun CoronaVirusDao(): CoronaVirusDao

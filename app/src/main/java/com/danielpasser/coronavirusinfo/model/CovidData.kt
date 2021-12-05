@@ -8,7 +8,7 @@ data class CovidData(
     @PrimaryKey
     val ID: String,
     val Message: String,
-    val Global: Global,
+  //  val Global: Global,
     val Countries: List<Country>)
 
 

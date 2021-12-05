@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/drawable/ic_refresh_background.xml" value="0.15185185185185185" />
+        <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/drawable/ic_refresh_foreground.xml" value="0.15185185185185185" />
         <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/layout/activity_main.xml" value="0.21875" />
         <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/layout/content_main.xml" value="0.19270833333333334" />
         <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/layout/fragment_country.xml" value="0.1" />
@@ -10,6 +12,8 @@
         <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/layout/item_view.xml" value="0.67" />
         <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/layout/item_view_country_details_list.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/layout/item_view_country_list.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/menu/menu_main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CoronaVirusInfo/app/src/main/res/menu/menu_search.xml" value="0.26927083333333335" />
       </map>
     </option>
   </component>

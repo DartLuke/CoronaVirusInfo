@@ -16,7 +16,18 @@ interface CoronaVirusDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(covidData: CovidData) : Long
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAllCountries(countries: List<Country>)
+
+    @Query("SELECT * FROM CovidCountries WHERE Country LIKE :country")
+    fun getFiltered(country:String): Single<List<Country>>
+
     @Query("SELECT * FROM CovidData")
     fun getAll(): Single<CovidData>
+
+    @Query("SELECT * FROM CovidCountries")
+    fun getAll1(): Single<List<Country>>
+
+
 
 }

@@ -2,10 +2,13 @@ package com.danielpasser.coronavirusinfo.model
 
 import android.os.Parcel
 import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-
+@Entity(tableName = "CovidCountries")
 data class Country(
-    val ID: String?,
+    @PrimaryKey
+    val ID: String,
     val Country: String?,
     val CountryCode: String?,
     val Slug: String?,
@@ -18,7 +21,7 @@ data class Country(
     val Date: String?
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
-        parcel.readString(),
+        parcel.readString()!!,
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
