@@ -2,23 +2,18 @@ package com.danielpasser.coronavirusinfo.repository
 
 
 import android.annotation.SuppressLint
-import android.telecom.Call
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.danielpasser.coronavirusinfo.model.Country
-import com.danielpasser.coronavirusinfo.model.CountryDetails
 import com.danielpasser.coronavirusinfo.model.CovidData
 import com.danielpasser.coronavirusinfo.retrofit.Api
 import com.danielpasser.coronavirusinfo.room.CoronaVirusDao
 import com.danielpasser.coronavirusinfo.utils.DataState
 import com.danielpasser.coronavirusinfo.utils.NetworkBoundResource
-import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -26,7 +21,7 @@ import javax.inject.Singleton
 
 class RepositoryCountryList
 @Inject constructor(
-    private val repoDao: CoronaVirusDao,
+    private val dao: CoronaVirusDao,
     private val api: Api
 ) {
 
@@ -38,16 +33,16 @@ class RepositoryCountryList
     {
         override fun processResult(it: CovidData): CovidData {
          _covidData.postValue(DataState.Success(it))
-         repoDao.insertAllCountries(it.Countries)
+         dao.insertAllCountries(it.Countries)
            return it
         }
 
         override fun saveCallResult(item: CovidData) {
-            repoDao.insertAll(item)
+            dao.insertAll(item)
         }
 
         override fun loadFromDb(): Single<CovidData> {
-          return  repoDao.getAll()
+          return  dao.getAll()
         }
 
         override fun createCall(): Single<CovidData> {
@@ -56,7 +51,7 @@ class RepositoryCountryList
 
         override fun fetchOnError(error: Throwable): Boolean {
 
-          Log.e("Test","Exeption"+error.message.toString())
+          Log.e("Test","Exception"+error.message.toString())
             return super.fetchOnError(error)
         }
     }
@@ -71,7 +66,7 @@ class RepositoryCountryList
     fun filterCountries(country:String)
     {
 
-        repoDao.getFiltered("%$country%")
+        dao.getFiltered("%$country%")
             .toObservable().subscribeOn(Schedulers.io()).
             subscribeWith(object : DisposableObserver<List<Country>>(){
                 override fun onNext(countries: List<Country>) {

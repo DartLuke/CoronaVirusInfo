@@ -1,4 +1,4 @@
-package com.danielpasser.coronavirusinfo.di.mainActivity
+package com.danielpasser.coronavirusinfo.di.mainactivity
 
 import androidx.lifecycle.ViewModel
 import com.danielpasser.coronavirusinfo.di.ViewModelKey

@@ -1,4 +1,4 @@
-package com.danielpasser.coronavirusinfo.di.mainActivity
+package com.danielpasser.coronavirusinfo.di.mainactivity
 
 import com.danielpasser.coronavirusinfo.ui.countrydetailsfragment.CountryDetailsFragment
 import com.danielpasser.coronavirusinfo.ui.countrylistfragment.CountryListFragment
